@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04函数的参数</title>
+	<script>
+		/*
+			函数的参数:外->内
+				* 形参	函数声明时的参数
+					* 形参其实就是局部变量
+				* 实参  函数执行时的参数
+			函数的返回值:从函数内->外
+				* return 
+					* 不写return或return后无值,则返回undefined
+		 */
+		
+		function show(num,a,b,c){
+			// var num = 100  形参
+			// var a = 200
+			// var b = 300
+			// var c      undefined
+		}
+
+
+		show(100,200,300);//100实参
+
+
+		// 求num的阶乘
+		var jiecheng = function(num){
+			// 5*4*3*2*1
+			// 1*5*4*3*2
+			// 1*2*3*4*5
+			var res = 1;
+			for(var i=2;i<=num;i++){
+				res *= i;
+			}
+
+			return res;
+		}
+
+		var result = jiecheng(5);//120
+		console.log(result);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

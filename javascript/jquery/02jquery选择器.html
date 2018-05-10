@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02jquery选择器</title>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		/*
+			jQuery别名:$
+			选择器:得到数组(jquery对象)
+
+			链式调用:$('.box').css('color','#f00').on('click',function(){}).html('666')
+				* 原理:每个函数后返回jquery对象
+
+			jquery方法(使用jquery方法必须是jquery对象):
+				* css()		样式
+				* on		事件	
+				* html()	内容
+				* 属性
+					* dom prop(attr,val)
+					* html attr(attr,val)
+					* 类名
+						* addClass()
+						* removeClass()
+		 */
+		jQuery(function($){
+			$('#box').html('jquery选择器').css('font-size',30);
+
+			document.querySelectorAll('.checkbox [name=hobby]')
+			$(':checkbox').attr({'checked':true, 'class':'hobby'});
+		});
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<div class="checkbox">
+		<input type="checkbox" name="hobby" checked>
+		<input type="checkbox" name="hobby">
+		<input type="radio" name="hobby">
+		<input type="checkbox" name="hobby">
+		<input type="checkbox" name="hobby">
+		<input type="checkbox" name="hobby">
+		<input type="checkbox" name="hobby">
+		<input type="checkbox" name="hobby">
+		<input type="radio" name="hobby">
+		<input type="checkbox" name="hobby">
+	</div>
+</body>
+</html>

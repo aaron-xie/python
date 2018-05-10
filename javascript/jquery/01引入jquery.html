@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01引入jquery</title>
+	<style>
+		.box{
+			width:200px;height:100px;background-color: #f00;
+		}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		/*
+			jquery只做两件事情
+				* 获取元素
+					* 选择器:选中元素
+						* 支持css选择器
+						* 私有选择器
+				* 操作元素(jquery方法)
+					* 属性
+					* 内容
+					* 样式
+					* 动画
+					* 事件
+		 */
+		// 替代window.onload的方式
+		// $: jQuery的别名
+		jQuery(function($){
+			// 安全使用$
+			// 利用jquery编写代码
+			var $box = $('.box');
+			console.log($box);
+
+			
+
+
+			// box.onclick = function(){}
+			$box.on('click',function(){
+				// 改变背景颜色
+				$('.box').css({
+					'background-color':'#58bc58',
+					'font-size':30
+				})
+
+				setTimeout(function(){
+					$box.hide();
+
+				},2000)
+			})
+
+
+		})
+	</script>
+</head>
+<body>
+	<div class="box">jQuery操作元素</div>
+</body>
+</html>

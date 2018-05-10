@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04动画</title>
+	<style>
+		.meinv{padding:5px;width:200px;border-radius:50%;border:10px solid #f60;}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		/*
+			动画
+				* show()/hide() 高度\宽度\透明度
+				* slideDown()/slideUp() 高度
+				* fadeIn()/fadeOut()  透明度 opacity
+		 */
+		jQuery(function($){
+			$('.btnHide').on('click',function(){
+				// 隐藏
+				$('.meinv').slideUp(1000);
+			});
+			$('.btnShow').on('click',function(){
+				// 显示
+				$('.meinv').slideDown(1000);
+			});
+
+			$('.btnFadeIn').on('click',function(){
+				$('.meinv').fadeIn(1000);
+			})
+
+			$('.btnFadeOut').on('click',function(){
+				$('.meinv').fadeOut(1000);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button class="btn">显示/隐藏</button>
+	<button class="btnHide">隐藏</button>
+	<button class="btnShow">显示</button><br/>
+	<button class="btnFadeIn">淡入</button>
+	<button class="btnFadeOut">淡出</button><br/>
+	<img src="img/g3.jpg" class="meinv">
+</body>
+</html>

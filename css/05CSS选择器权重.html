@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05CSS选择器权重</title>
+	<style>
+		/*
+			选择器：
+				* 后代选择器：空格
+				* 子选择器：  >
+			选择器权重
+				* 使用权重高的样式
+				* 如果权重一样，后面覆盖前面
+
+				* 列表
+					选择器				权重（内联,id,类/属性,标签）
+										1,1,1,1
+
+					img					0,0,0,1
+					a>img				0,0,0,2
+					#link img			0,1,0,1
+					#link img[src]		0,1,1,1
+
+				* 权重为0的选择器：
+					* 继承：某些css属性默认具有继承特性
+					* 可继承的属性
+						* color
+						* font
+				* 没有权重的选择器：
+					* > 子选择器
+					* + 下一个兄弟选择器
+					* ~ 后面所有兄弟选择器
+				* CSS属性
+					* 字体font
+						* font-size
+						* font-weight
+						* font-family 	设置本地字体
+						* font-style
+						* font-face：服务器字体（）
+
+
+		 */
+		
+		body{}
+		
+		#link img[src]{width:50px;}
+		a > img{display:block;width:200px;}
+		img{width:160px;}
+		#link img{width:100px;}
+
+		/*0,0,0,11*/
+		div div div div div div div div div div div{color:#f00;}
+		
+		/*0,0,1,0*/
+		.box{color:#58bc58;}
+
+		#link~img{border:5px dashed #f00;}
+		#link+img{border:5px solid #f00;}
+
+
+		/*继承*/
+		.list{
+			color:#f00;font-size:12px;font-weight:bold;font-family:;
+			border:2px solid #ddd;}
+		h1{font-family:'微软雅黑',Magneto,Arial,Georgia;}
+	</style>
+</head>
+<body>
+	<h1>权重计算 quanzhong</h1>
+	<img src="img/g2.jpg" alt="">
+	<a href="https://www.baidu.com" id="link">
+		<img src="img/g1.jpg">
+		Python1802喜欢的美女1号
+	</a>
+	<br/>
+	<img src="img/g3.jpg">
+	<img src="img/g4.jpg">
+	<img src="img/g5.jpg">
+
+	<div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<div>
+							<div>
+								<div>
+									<div>
+										<div>
+											<!-- 1,0,0,0 -->
+											<div class="box" style="color:#00f">权重计算</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- css继承 -->
+	<ul class="list">
+		<li>权重测试 li 1
+			<div>权重测试 div 1<span>权重测试 span 1</span></div>
+		</li>
+		<li>权重测试 li 2
+			<div>权重测试 div 2<span>权重测试 span 2</span></div>
+		</li>
+		<li>权重测试 li 3
+			<div>权重测试 div 3<span>权重测试 span 3</span></div>
+		</li>
+		<li>权重测试 li 4
+			<div>权重测试 div 4<span>权重测试 span 4</span></div>
+		</li>
+		<li>权重测试 li 5
+			<div>权重测试 div 5<span>权重测试 span 5</span></div>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06随机背景颜色</title>
+	<style>
+		.box{width:200px;height:100px;border:10px solid #f00;background-color: #fff;}
+	</style>
+	<script src="../common.js">
+		/*
+			通过src引入的js文件,等效于在此处编写的js代码
+		 */
+	</script>
+	<script>
+		window.onload = function(){
+			/*
+				自动:
+					* 设置定时器:setInterval(fn,duration)
+						* 每个duration时间(ms),执行一次fn
+						* 返回一个定时器标识
+					* clearInterval() :清除定时器
+			 */
+			var box = document.getElementsByClassName('box')[0];
+			var qty = 0;
+			var timer = setInterval(function(){
+				qty++;
+				if(qty%6 === 0){
+					clearInterval(timer);
+				}
+				document.body.style.backgroundColor = randomColor();
+				
+			},300);
+
+			// 鼠标移入停止
+			box.onmouseover = function(){
+				clearInterval(timer);
+			}
+
+			box.onmouseout = function(){
+				timer = setInterval(function(){
+					document.body.style.backgroundColor = randomColor();
+				},300);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

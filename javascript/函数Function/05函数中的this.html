@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05函数中的this</title>
+	<style>
+		.box{width:200px;height:200px;background-color: #58bc58;}
+	</style>
+	<script>
+		window.onload = function(){
+
+			/*	函数中的this
+					* 每个函数中都有一个this
+					* this指向当前对象
+					* 当前对象是谁,取决于函数的执行环境(谁调用了这个函数)
+			 */
+			
+			function show(){
+				console.log(this);
+			}
+
+			show();//手动调用函数:this => window对象
+
+			var box = document.getElementsByClassName('box')[0];//[box]
+
+			box.onclick = show;//事件驱动:this->绑定事件的元素
+
+		}
+
+
+		// 全局作用域(window)
+		// 避免往全局作用于下声明过多的变量
+		// * 冲突
+		// * 污染全局作用域
+
+		// var name
+		// var top
+		// ....
+
+
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

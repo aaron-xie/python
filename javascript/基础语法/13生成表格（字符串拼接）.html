@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成10行6列表格</title>
+	<style>
+		table{border:1px solid #ddd;border-collapse: collapse;}
+		table td{border:1px solid #ddd;padding:5px 10px;}
+		#output{
+			margin-top:30px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">生成表格</h1>
+	<label for="row" class="title">行</label>
+	<input type="text" id="row">
+	<label for="col" class="title">列</label>
+	<input type="text" id="col">
+	<button id="btn">生成</button>
+	<div id="output">
+		
+	</div>
+	<script>
+		// 获取元素节点
+		var row = document.getElementById('row');
+		var col = document.getElementById('col');
+		var btn = document.getElementById('btn');
+		var output = document.getElementById('output');
+
+		/*
+		
+			* 生成
+			* 获取节点:
+				document.getElementById();//node
+					getElementsByClassName();//[node,node]
+					getElementsByTagName();//[node,node]
+			节点操作
+				* 操作属性
+				* 操作内容
+				* 绑定事件
+		* */
+
+		// var title = document.getElementsByClassName('title');//[node,node,node]
+		// div.getElementsByTagName()
+
+		for(var i=0;i<title.length;i++){
+			title[i].onclick = function(){
+				console.log(666)
+			}
+		}
+
+		btn.onclick = function(){
+			// 获取输入的值
+			var _row = parseInt(row.value);
+			var _col = parseInt(col.value);
+
+			// 根据值生成表格
+			// table>tbody>tr>td,th
+			var content = '<table><tbody>';
+
+			// 外层循环控制行
+			for(var i=0;i<_row;i++){
+				content += '<tr>';
+
+				// 内层循环控制列
+				for(var j=0;j<_col;j++){
+					content += '<td>单元格'+i+j+'</td>';
+				}
+
+				// 闭合tr
+				content += '</tr>';
+
+			}
+
+
+			// 闭合tbody,table
+			content += '</tbody></table>';
+
+
+			// 把表格写入页面#output
+			output.innerHTML = content;
+		}
+
+	</script>
+</body>
+</html>

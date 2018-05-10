@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品列表</title>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		jQuery(function($){
+			/*
+				发起ajax请求,获取后端接口数据
+					* xhr: XMLHttpRequest
+			 */
+			$.ajax({
+				// 接口地址
+				url:'http://localhost:1802/api/goodslist.php',
+
+				// 请求类型:默认get
+				// type:'get'
+
+				success:function(data){
+					console.log(data)
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<h1>商品列表</h1>
+</body>
+</html>

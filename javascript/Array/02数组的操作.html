@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01数组的定义</title>
+	<script>
+		/*
+			操作
+				* 增 : 添加数组元素
+				* 删 : 删除指定数组元素
+				* 改 : 修改现有的数组元素
+				* 查 : 读取指定数组元素
+
+			索引值:从0开始的正整数
+				* 
+
+			属性:
+				* length :保存数组元素的个数
+
+
+			数组的方法
+				* 删除
+					* shift()  删除数组第一个项
+					* pop()		删除数组最后一项
+				* 添加
+					* unshift()	在开始添加
+					* push()	在最后追加
+				* 添加/删除/替换
+					* splice(start,deleteNum,…items)：在数组中插入、删除、替换的通用方法
+						* start：起始索引位置
+						* deleteNum：要删除的数量
+						* items：插入的元素（可以是多个）
+
+			判断数组中是否包含某个值
+				* indexOf() 方法返回keyword所在数组中的索引值，如果数组不存在keyword，则返回-1
+
+		 */
+		// 			0		, 1		,	2
+		var arr = ['陈冠希','谢霆锋','李宇春'];
+
+		// 增加
+		arr[3] = '渣渣辉';
+		arr[4] = 'PGone';
+		arr[5] = '李小璐';
+
+		// 删除
+		arr.shift();
+		arr.pop();
+
+		console.log(arr);
+
+		// 修改
+		arr[3] = 'PGtwo'
+
+		// 读取:春哥
+		var chunge = arr[1];
+		console.log(chunge)
+
+		console.log(arr);
+
+		var arr2 = ['js','Python','C'];
+		arr2.unshift('C++');
+		arr2.push('Java');
+
+		// 增加
+		arr2.splice(2,0,'MySQL','MongoDB');
+
+		// 删除
+		arr2.splice(5,1);
+
+
+		// 替换
+		// 先删除后添加
+		arr2.splice(5,1,'Javascript')
+
+		console.log(arr2);
+
+		// 技师/工号
+		var huisuo = ['1号技师','2好技师','3号技师','4号技师'];
+
+		console.log('length:',huisuo.length);//0,1,2,3
+		for(var i=0;i<huisuo.length;i++){
+			console.log(huisuo[i]);
+		}
+
+		// 技师上钟
+		huisuo.splice(1,1);
+
+
+		// 判断2好技师是否上钟
+		// idx>=0, idx!=-1
+		var idx = huisuo.indexOf('2好技师');//有:返回对应索引值,没有:返回-1
+
+		if(idx>=0){
+			console.log('等你哟');
+		}else{
+			console.log('请点下一个')
+		}
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

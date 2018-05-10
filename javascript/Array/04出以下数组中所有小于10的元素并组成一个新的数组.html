@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>出以下数组中所有小于10的元素并组成一个新的数组</title>
+	<script src="../common.js"></script>
+	<script>
+		/*
+			出以下数组中所有小于10的元素并组成一个新的数组
+			[10,15,2,32,5,4,20,8,48,54,6]
+		 */
+
+		 var arr = [10,15,2,32,5,4,20,8,48,54,6];
+
+		 // 创建空数组,用于存放小于10的数
+		 var res = [];
+
+		 // 遍历数组，找出所有小于10的数
+		 for(var i=0;i<arr.length;i++){
+		 	if(arr[i] < 10){
+		 		// res[i] = arr[i];//避免稀疏数组
+		 		res.push(arr[i]);
+
+		 		// res[res.length] = arr[i]
+		 	}
+		 }
+
+		 console.log(res);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

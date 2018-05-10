@@ -1,0 +1,75 @@
+/*
+	重置样式:影响整个网站;
+ */
+body{margin:0;font-size:14px;}
+ul,ol{list-style:none;padding:0;margin:0;}
+a{color:#333;text-decoration:none;}
+a:hover{color:#008fc7;text-decoration: underline;}
+p{margin:8px 0;}
+
+
+/*
+	公共样式
+ */
+
+
+/*
+	布局
+ */
+.container{width:1100px;margin:0 auto;}
+.header{overflow:hidden;background-color: #f2f2f2;}
+.header .logo{float:left;width:240px;text-align:center;}
+.header .nav{float:right;}
+.header .nav li{float:left;width:120px;line-height:65px;}
+.banner img{display: block;}
+
+
+/*
+	主体内容
+ */
+.main{padding-bottom:100px;}
+.main .content{overflow:hidden;}
+.content h2{margin:0 0 10px;font-weight:normal;text-transform: uppercase;/*font-family: */}
+.content h2 span{display:inline-block;padding:0 16px;background-color: #01b4ee;color:#fff;line-height:50px;}
+.content .service{float:left;}
+.service li{overflow:hidden;height:100px;}
+.service li a{float:left;width:200px;color:#01b4ee;}
+.service li p{float:left}
+.content .cases{float:right;}
+.cases li{float:left;width:162px;}
+
+.main .info{overflow:hidden;}
+.main .info > div{float:left;width:260px;margin-right:50px;}
+.info .more{text-align:right;margin-bottom:10px;font-size:12px;text-transform: uppercase;}
+.info .more a{color:#666;}
+.info h4{margin-bottom:0;}
+.info div.discount{float:right;width:400px;margin-right:0;}
+.discount li{ position:relative; line-height:26px;border-bottom:1px dashed #ddd;}
+.discount li span{position: absolute;right:0;top:50%;margin-top:-13px;color:#999;}
+/*
+ 水平居中：left:50%;margin-left:-width/2;
+ 垂直居中：top:50%;margin-top:-height/2*/
+
+
+ /*
+ 	底部
+ 		伪类：
+ 			* first-child
+ 			* last-child
+ 			* nth-child(2)
+  */
+.footer{position:relative;padding:40px;background-color:#333;color:#999;}
+.footer a{color:#999;}
+.link{position:absolute;right:50px;top:-52px;height:40px;padding:5px 10px;border:1px solid #ddd;background-color:#fff;color:#333;font-size:12px;}
+.link a{color:#333;}
+.link ul{overflow:hidden;}
+.link li{float:left;width:160px;}
+.link li a{float:left;height:40px;padding-right:10px;margin-right:10px;line-height:40px;border-right:1px solid #ddd;}
+.link li span{float:left;padding-top:5px;}
+.footer .nav{overflow:hidden;}
+.footer .nav li{float:left;padding:0 15px;border-right:1px solid #ddd;line-height:14px;}
+.footer .nav li:nth-child(1){padding-left:0;color:#f00;}
+.contact{overflow:hidden}
+.contact .add{float:left;}
+.contact .phone{float:right;font-size:30px;}
+.copyright{text-align:center;}

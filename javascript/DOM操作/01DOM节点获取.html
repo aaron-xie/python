@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01DOM节点获取</title>
+</head>
+<body>
+	<h1 class="title">节点操作</h1>
+	<div id="list">
+		<a href="#">Google</a>
+		<a href="#" id="baidu">Baidu</a>
+		<a href="#">Yahoo</a>
+	</div>
+	<a href="#">360</a>
+	<script>
+		/*
+		
+			* 生成
+				* document.createElement()
+			* 插入
+				* 父级元素.appendChild(添加的元素) : 追加
+			* 获取节点:
+				* document.getElementById();//node
+				* getElementsByClassName();//[node,node]
+				* getElementsByTagName();//[node,node]
+
+				获取元素的捷径
+					* html: document.documentElement
+					* body: document.body
+					* a   : document.links   //[]
+					* image: document.images //[]
+
+			节点操作
+				* 操作属性
+					* 设置css样式
+				* 操作内容
+				* 绑定事件
+		*/
+	
+	var baidu = document.getElementById('baidu');//node
+	console.log(baidu);
+
+	var title = document.getElementsByClassName('title');//[node]
+	console.log(title);
+
+	var link = document.getElementsByTagName('a');
+	console.log(link);
+
+	var list = document.getElementById('list');
+	var list_link = list.getElementsByTagName('a');
+	console.log(list_link);
+
+	// 生节成点
+	var h2 = document.createElement('h2');
+	h2.id = 'subTitle';
+	h2.innerHTML = '人工智能';
+
+	// 获取body
+	// var body = document.getElementsByTagName('body')[0];//[body]
+	var body = document.body;
+	body.appendChild(h2)
+
+	</script>
+</body>
+</html>

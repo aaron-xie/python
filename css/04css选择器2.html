@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04css选择器2</title>
+	<style>
+		/*
+			属性选择器：[]
+				* [attr=val]
+				* [attr^=val]	属性以val开头
+				* [attr$=val]   属性以val结尾
+		 */
+		
+		[name=select]{
+			border:2px solid #f00;width:50px;background-color: #f00;
+		}
+
+		
+		[href='163.com']{
+			color:#f00;font-weight:bold;
+		}
+
+		/*选择以https开头的连接*/
+		[href^=https]{font-size:30px;color:#f00;}
+
+
+		/*选择以xx结尾*/
+		[href$=cn]{
+			color:#58bc58;
+		}
+	</style>
+</head>
+<body>
+	<table id="datalist">
+		<tbody>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+			<tr>
+				<td>单元格01</td>
+				<td>单元格02</td>
+				<td>单元格03</td>
+				<td>单元格04</td>
+				<td>单元格05</td>
+				<td><input type="checkbox" name="select"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul>
+		<li><a href="https://www.baidu.cn">baidu</a></li>
+		<li><a href="www.qq.com">qq</a></li>
+		<li><a href="163.net">163</a></li>
+		<li><a href="http://www.58.com">58同城</a></li>
+		<li><a href="http://www.1000phone.net">千锋</a></li>
+		<li><a href="www.taobao.com">淘宝</a></li>
+		<li><a href="jd.com">京东</a></li>
+		<li><a href="http://www.guazi.com.cn">瓜子</a></li>
+		<li><a href="www.mi.com">小米</a></li>
+		<li><a href="https://www.cctv.cn">cctv</a></li>
+	</ul>
+</body>
+</html>

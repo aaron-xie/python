@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成10行6列表格</title>
+	<style>
+		table{border:1px solid #ddd;border-collapse: collapse;}
+		table td{border:1px solid #ddd;padding:5px 10px;}
+		#output{
+			margin-top:30px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">生成表格</h1>
+	<label for="row" class="title">行</label>
+	<input type="text" id="row">
+	<label for="col" class="title">列</label>
+	<input type="text" id="col">
+	<button id="btn">生成</button>
+	<div id="output">
+		
+	</div>
+	<script>
+		// 获取元素节点
+		var row = document.getElementById('row');
+		var col = document.getElementById('col');
+		var btn = document.getElementById('btn');
+		var output = document.getElementById('output');
+
+		// 点击生成表格
+		btn.onclick = function(){
+			// 获取输入的值
+			var _row = parseInt(row.value);
+			var _col = parseInt(col.value);
+
+
+			// 生成table和tbody
+			var table = document.createElement('table');
+			var tbody = document.createElement('tbody');
+			// 把tbody写入table
+			table.appendChild(tbody);
+
+			// 外层循环控制行
+			for(var i=0;i<_row;i++){
+				// 生成tr
+				var tr = document.createElement('tr');
+				// 把tr写入tbody
+				tbody.appendChild(tr);
+
+				// 随机背景颜色
+				var str = '0123456789abcdef';//索引值
+				var color = '#';
+				for(var k=0;k<6;k++){
+					//生成随机索引值
+					var idx = parseInt(Math.random()*str.length);
+					color += str[idx];
+				}
+				// console.log(color);
+				tr.style.backgroundColor = color;
+
+				for(var j=0;j<_col;j++){
+					// 创建td
+					var td = document.createElement('td');
+					td.innerHTML = '单元格' + i + j;
+
+					// 把td写入tr
+					tr.appendChild(td);
+				}
+			}
+
+			// 添加前清空
+			output.innerHTML = '';
+
+			// 把table写入页面#output
+			output.appendChild(table);
+		}
+
+	</script>
+</body>
+</html>

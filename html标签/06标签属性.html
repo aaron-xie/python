@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta />
+		<title>标签属性</title>
+		<style>
+			/*
+				
+			 */
+			h1{color:#58bc58;}
+			h1:hover{color:#f00;}
+
+			/*
+			
+				根据类型设置样式
+				格式：.类名{css样式}
+
+				颜色组成部分
+					* r
+					* g
+					* b
+
+				十六进制：0123456789abcdef
+			*/
+			.iphonex{
+				border:10px solid #58bc58;
+			}
+			.iphonex:hover{
+				border-color:#ff6600;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 title="laoxie">标签属性</h1>
+		<!-- 
+			标签属性
+				* 专有属性：特定的便签所具有的属性
+					* src
+					* href
+					* target
+				* 公共属性：每个标签都具有的属性
+					* id	  标签的唯一表示，一般用于元素DOM节点操作
+					* class  设置类名，用于设置样式
+					* style 设置样式
+					* title 设置标签的标题
+		 -->
+		<img src="img/iphonex.jpg" class="iphonex">
+		
+
+	</body>
+</html>

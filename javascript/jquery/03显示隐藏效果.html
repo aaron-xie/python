@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03显示隐藏效果</title>
+	<style>
+		.box{width:500px;height:200px;line-height:200px;text-align:center;font-size:50px;background-color: #ffc;border:5px solid #f60;}
+		.hide{display: none;}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		jQuery(function($){
+			/*
+				动画
+			 */
+			var $box = $('.box');
+			$('.btn').on('click',function(){
+				// if($box.hasClass('hide')){
+				// 	$box.removeClass('hide')
+				// }else{
+				// 	$box.addClass('hide');
+				// }
+				// $box.toggleClass('hide');//如果有就删除/如果没有就添加
+				if($box.is(':hidden')){
+					$box.show(3000)
+				}else{
+					$box.hide(500);
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<h1>03显示隐藏效果</h1>
+	<button class="btn">显示/隐藏</button>
+	<div class="box">
+		内容
+	</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06自动轮播图</title>
+	<style>
+		ul{list-style: none;padding:0;margin:0;}
+		.carousel{position:relative;height:320px;width:320px;overflow: hidden;}
+		.carousel ul{position: absolute;left:0;top:0;}
+		.carousel img{display:block;}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		jQuery(function($){
+			var $carousel = $('.carousel');
+			// var $ul = $('.carousel ul');
+			var $ul = $carousel.children('ul');
+
+			// 默认显示第一张
+			var index = 0;
+
+			var timer = setInterval(autoPlay,3000);
+
+
+
+			// 鼠标移入移出
+			$carousel.on('mouseover',function(){
+				clearInterval(timer);
+			}).on('mouseout',function(){
+				timer = setInterval(autoPlay,3000);
+			})
+
+
+			function autoPlay(){
+
+				/*
+					idx		top
+					0		0
+					1		-320
+					2		-640
+					3		-960
+					...
+
+					推导公司: top = -idx*320
+				 */
+				
+				index++;
+
+				if(index>=$ul.children().length){
+					index=0;
+				}
+
+				var top = -index*$carousel.height();
+
+
+				$ul.animate({top:top})
+			}
+		});
+	</script>
+</head>
+<body>
+	<div class="carousel">
+		<ul>
+			<li><img src="img/g1.jpg" alt=""></li>
+			<li><img src="img/g2.jpg" alt=""></li>
+			<li><img src="img/g3.jpg" alt=""></li>
+			<li><img src="img/g4.jpg" alt=""></li>
+			<li><img src="img/g5.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

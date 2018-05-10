@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05复制数组</title>
+	<script>
+		var str = 'laoxie';
+
+		// 复制成功
+		var lx = str;
+
+		lx += 666;
+		console.log(str,lx);
+
+
+		var arr = [10,20,30];
+
+		// 复制不成功
+		var copyArr = arr;
+
+		copyArr.push(666);
+
+		console.log(arr,copyArr);
+
+
+		// 复制引用数据类型(Array)
+		var arr2 = ['laoxie','xiaoxie','tiantian'];
+
+		// 复制方法1:
+		// 创建空数组,遍历数组逐个写入新数组
+		var res2 = [];
+		for(var i=0;i<arr2.length;i++){
+			res2[i] = arr2[i];
+		}
+
+		// 复制方法2:slice()
+		// 截取
+		var res3 = arr2.slice(0,2);
+		console.log(res3);
+		res3.push('laowang');
+
+		// 利用slice方法复制
+		var res4 = arr2.slice(0);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

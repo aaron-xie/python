@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07愤怒的小鸟</title>
+	<style>
+		body{overflow:hidden;}
+		#bird{position:absolute;left:0;top:0;width:200px;transform:rotateY(180deg);}
+
+		/*
+		
+		 css3
+			* transform:rotateY();
+		 */
+
+	</style>
+	<script>
+		window.onload = function(){
+			/*
+				浏览器可视区域的宽高:
+					* window.innerWidth
+					* window.innerHeight
+			 */
+			var bird = document.getElementById('bird');
+
+			var left = 0;
+
+			// 不断改变left值
+			setInterval(function(){
+				left += 5;
+				if(left > window.innerWidth){
+					// 从另一侧出现
+					left = -200;
+				}
+				bird.style.left = left + 'px';//一定需要加单位
+			},30)
+		}
+	</script>
+</head>
+<body>
+	<img src="img/bird.jpg" id="bird">
+</body>
+</html>

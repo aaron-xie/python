@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09布局之浮动</title>
+	<style>
+	/*
+		浮动元素后移动要清除浮动
+			* 清除方法
+				* clear:both;
+				* 简单粗暴:给浮动元素父级设置overflow:hidden;
+	 */
+		ul{list-style:none;margin:0;padding:0;border:1px solid #f00;overflow:hidden;}
+		.list li{margin:10px;border:1px solid #ddd;float:left;}
+		.list img{display:block;width:200px;}
+		/*.list img:hover{height: 600px;}*/
+
+
+		/*外边距合并与塌陷*/
+		.box{background-color: #f00;width:200px;height:300px;;padding-top:1px;}
+		.box .content{margin:30px 0 0 30px;background: #58bc58;width:150px;height:150px;}
+
+
+		.title{
+			width:192px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis
+		}
+		.title:hover{width:350px;}
+	</style>
+</head>
+<body>
+	<h1>世界五大美女</h1>
+	<ul class="list">
+		<li><img src="img/g1.jpg" alt="">非洲美女</li>
+		<li><img src="img/g2.jpg" alt="">美洲美女</li>
+		<li><img src="img/g3.jpg" alt="">乌克兰美女</li>
+		<li><img src="img/g4.jpg" alt="">台湾美女</li>
+		<li><img src="img/g5.jpg" alt="">大陆美女</li>
+
+	</ul>
+
+	<h1>你好啊,五大美女</h1>
+<!-- 
+	<div class="box">
+		<div class="content"></div>
+	</div> -->
+
+
+	<div class="title">
+		hello, ni hao ma ,wo hen hao,ni zai na
+	</div>
+</body>
+</html>

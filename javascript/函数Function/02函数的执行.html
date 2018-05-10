@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02函数的执行</title>
+	<style>
+		#box{width:200px;height:100px;background-color: #f00;}
+	</style>
+	<script>
+		/*
+			javascript = ECMAScript + BOM + DOM
+
+			BOM:
+				* window	可省略
+					* 不建议省略window的场景
+						* 事件
+						* 属性
+					* 事件
+						* onload	页面所有元素(包括DOM,图片等资源文件)加载完成后执行
+					* 函数(方法)
+						* alert()
+						* parseInt()
+						* parseFloat()
+						* Number()
+						* String()
+						* Boolean()
+					* 对象
+						* document
+			函数执行:
+				* 手动(主动)
+				* 事件驱动(被动)
+					* 事件发生都是一瞬间的
+					* 常用事件
+						* onclick
+						* ondblclick
+						* onmouseover
+						* onmouseout
+						* onkeyup
+						* onkeydown
+		 */
+		 window.onload = function(){
+		 	var box = document.getElementById('box');//节点(对象)
+		 	var username = document.getElementById('username');//节点(对象)
+
+
+			function show(){
+				console.log('laoxie');
+			}
+
+			// 手动执行(主动)
+			show();
+
+			// 事件驱动执行(被动)
+			box.onclick = show;
+
+			box.onmouseover = function(){
+				console.log('over');
+			}
+
+			box.onmouseout = function(){
+				console.log('out')
+			}
+
+
+			// document.onkeyup = function(event){console.log(event.keyCode,event.key)
+			// 	// 事件对象:event
+			// 	console.log('upupup')
+			// }
+
+			// document.onkeydown = function(event){
+			// 	// 事件对象:event
+			// 	if(event.keyCode === 38){
+
+			// 	}
+			// 	console.log('down')
+			// }
+
+
+			// 表单改变事件onchange
+			username.onchange = function(){
+				console.log(666)
+			}
+		}
+		
+
+
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<input type="text" id="username">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05自定义动画</title>
+	<style>
+		.meinv{position:absolute;padding:10px;width:200px;height:200px;line-height:200px;text-align:center;border-radius: 50%;background-color: #f00;}
+		.font{top:300px;}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		jQuery(function($){
+			/*
+				筛选:利用选择器的得到的元素不一定是想要的,所以需要进一步筛选
+					选择器获取10个元素,筛选传1个元素
+			 */
+			var $meinv = $('.meinv').eq(0);//[img,div]
+			$meinv.on('click',function(){
+				$meinv.animate({left:800,width:600,color:'#ff0',fontSize:50},2000,function(){
+					$meinv.css({'backgroundColor':'#58bc58',color:'#ff0'})
+				})
+				// 函数:回调函数(动画完成后执行)
+			})
+		});
+	</script>
+</head>
+<body>
+	<img src="img/g5.jpg" alt="" class="meinv">
+	<div class="meinv font">字体颜色</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06数组的排序</title>
+	<script>
+		/*
+			sort()	
+				* 默认:按字符串(ASCII码)排序
+				* 往sort方法中传入一个函数,告诉sort方法如何排序
+		 */
+		var arr = [10,6,20,2,30,41,32,5,8,24];
+
+
+		// var res = arr.sort();
+		var res = arr.sort(function(a,b){
+			// 告诉sort方法如何排序
+			// * return 正数:a>b
+			// * return 负数:a<b
+			// * return 0   :a==b
+			// if(a>b){
+			// 	return 1
+			// }else if(a<b){
+			// 	return -1
+			// }else{
+			// 	return 0
+			// }
+
+			// 简单写法:
+			return a-b;
+		});
+		res.reverse();
+		console.log(res);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

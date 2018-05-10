@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09计算两个文本框的和</title>
+</head>
+<body>
+	<h1>09计算两个文本框的和</h1>
+	<input type="text" id="num1" name="num1">
+	<select name="op" id="op">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="×">&times;</option>
+		<option value="÷">÷</option>
+		<option value="%">%</option>
+		<option value="aa">aa</option>
+	</select>
+	<input type="text" id="num2" name="num2">
+	<button id="btn">计算</button>
+	<div id="output"></div>
+	<script>
+		/*
+			加减乘除
+
+			switch语句在比较值时使用的是全等操作符，因此不会发生类型转换
+				* case: 当符合条件时，会从符合条件的那一条case语句开始，依次顺序向下执行
+				* break: 跳出switch语句
+				* default: 当所有的case都不满足的情况下会执行defalut下面的语句
+		 */
+		// 获取元素
+		var num1 = document.getElementById('num1');
+		var num2 = document.getElementById('num2');
+		var op = document.getElementById('op');
+		var btn = document.getElementById('btn');
+		var output = document.getElementById('output');
+
+
+		btn.onclick = function(){
+			// 获取输入的值：num1,num2,op
+			var n1 = num1.value*1;
+			var n2 = Number(num2.value);
+			var _op = op.value;
+			// console.log(n1,n2,_op);
+
+			/*if(){
+
+			}else if(){
+
+			}else if(){
+				
+			}else if(){
+				
+			}else if(){
+				
+			}*/
+
+
+			var res;//声明一个变量不赋值，值为：undefined
+			// console.log(res)
+
+			switch(_op){
+				// if(_op === 'add') 恒等
+				// 当符合条件时，会从符合条件的那一条case语句开始，依次顺序向下执行（case穿透）
+				case '+':
+					res = n1 + n2;
+					break;
+				case '-':
+					res = n1 - n2;
+					break;
+				case '×':
+					res = n1 * n2;
+					break;
+				case '÷':
+					res = n1 / n2;
+					break;
+				case '%':
+					res = n1 % n2;
+					break;
+
+				default://类似于else
+					res = '不能运算';
+			}
+
+
+			// 把值写入#output元素
+			// innerHTML
+			output.innerHTML = n1 + _op + n2 + '=' + res;
+		}
+	</script>
+</body>
+</html>

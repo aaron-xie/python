@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<meta />
+		<title>03其他常用双标签</title>
+	</head>
+	<body>
+		<!-- 
+			双标签（语义）:格式<h1></h1>
+				* p  段落
+				* 列表
+					* ul ：无序列表
+						* li
+					* ol：有序列表
+						* li
+				* a 超链接
+					* href
+					* target
+				* 文本格式化标签
+					* strong:加粗 
+						* 语义：加强语气
+					* em:倾斜
+					* del:删除线
+					* ins:下划线
+				* div：无语义，一般用于容器
+				* span：无语义，一般用于设置字体样式
+
+
+			* 单标签：格式<meta/>
+				* img
+					* src  图片路径
+					* width/height 	图片宽高
+				* br
+
+			* <strong>路径</strong>
+				* 相对路径：相对于html文件的路径
+				* 据对路径：用于服务器
+				* ..表示上级目录
+
+
+			* 属性：标签的属性（放到标签当中）
+				* 格式：<标签 属性="属性值" >
+
+		 -->
+
+		<ul>
+			<li>
+				<img src="img/iphonex.jpg">
+				<h4>iphoneX</h4>
+			</li>
+			<li>
+				<img src="iphone8.jpg" width="300">
+				<h4>iphone8</h4>
+			</li>
+			<li>	
+				<img src="../test/mix2s.jpg" width="300">
+				<h4>iphone8</h4>
+			</li>
+		</ul>
+
+		<p>
+			我们不一样，<br/>有啥不一样，<br/>其实也一样
+		</p>
+
+		<div>
+			<p>我们不一样，</p>
+			<p>有啥不一样，</p>
+			<p>其实也一样</p>
+			<span>我们不一样，</span>
+			<span>有啥不一样，</span>
+			<span>其实也一样</span>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03函数作用域</title>
+	<script>
+		// 全局
+		window.onload = function(){
+			// var myname
+			// function show(){}
+			/*
+				作用域:
+					* 全局作用域  window下的作用域(不在任何函数下的作用域)
+						* 全局变量
+					* 局部作用   函数内部
+						* 局部变量 
+
+
+					* 变量访问规则:就近原则
+						* 当前作用域->..->全局作用域
+
+					* 声明提前:把声明提前到左前作用域最顶端
+			 */
+			
+			// 全局作用域
+			var myname = 'laoxie';
+
+			function show(){
+				// 局部作用域
+				var myage = 18;
+
+				console.log(myname,myage);
+			}
+
+
+			document.documentElement.onclick = function(){
+				// var myname,function sum(){}
+
+				function sum(){
+					console.log(myname);//undefined
+				}
+
+				sum();
+
+				var myname = 666;
+			}
+			show();
+			
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

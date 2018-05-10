@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05单行文本框input的类型</title>
+
+</head>
+<body>
+	<!-- 
+		input
+			* type
+				* text
+				* password
+				* radio:单选框
+				* checkbox:多选框
+				* hidden
+				* button 	<button></button>
+			* value
+		textarea
+		label
+			* for
+
+
+		表单元素属性
+			* type
+			* value
+			* name
+			* placeholder	一般用于提示信息
+			* selected
+			* checked
+			* readonly
+			* disable
+
+		
+	 -->
+	<form action="http://www.baidu.com">
+		 <div>
+			 <label for="">text：</label>
+			 <input type="text" placeholder="请输入数字字母下划线组合" name="username" value="laoxie" id="username">
+		 </div>
+		 <div>
+			 <label for="">password：</label>
+			 <input type="password" name="password">
+		 </div>
+		 <div>
+			 <label for="">button ：</label>
+			 <input type="button" value="登录">
+		 </div>
+		 <div>
+			 <label for="">radio ：</label>
+			 <input type="radio" name="isMarry">已婚
+			 <input type="radio" name="isMarry" checked>未婚
+		 </div>
+		 <div>
+			 <label for="">checkbox ：</label>
+			 <input type="checkbox" name="xieyi"><a href="#">《xx协议》</a>
+			 <input type="checkbox" name="xieyi"><a href="#">《xx协议》</a>
+			 <input type="checkbox" name="xieyi"><a href="#">《xx协议》</a>
+			 <input type="checkbox" name="xieyi"><a href="#">《xx协议》</a>
+		 </div>
+		  <div>
+			 <label for="">date ：</label>
+			 <input type="date" name="start">
+		 </div>
+		  <div>
+			 <label for="">time ：</label>
+			 <input type="time" name="start">
+		 </div>
+		 <button type="submit">登录</button>
+		 <button type="reset">重置</button>
+	 </form>
+</body>
+</html>

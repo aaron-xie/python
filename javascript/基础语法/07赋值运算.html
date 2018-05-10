@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07赋值运算</title>
+</head>
+<body>
+	<script>
+		/* 
+			算术运算
+			赋值运算：
+				* =
+					var num = 100;
+						* var 变量声明关键字
+						* num 变量
+						* 100 数据
+						* 声明一个变量num并赋值100
+						* 变量：数据的容器
+				* +=，-=
+				* *=，/=，%=
+
+			* 一元运算
+				* ++ 在原来的基础上加一
+					* 后置：num++返回+1前的值（num）
+					* 前置：++num返回+1后的值（num+1）
+				* -- 在原来的基础上减一
+					* 后置：num--返回-1前的值（num）
+					* 前置：--num返回-1后的值（num-1）
+
+				* 变量/返回值
+
+		*/
+		var num = 100;
+
+		// num = num + 20;
+		num += 20;
+
+		var num2 = 100
+		// num = num + 1
+		// num++;
+		num += 1;
+
+
+		var num3 = 10;
+		var res3 = num3++;//num3:11,res3:10
+
+		var num4 = 10;
+		var res4 = ++num4;//num4:11,res4:11
+
+
+		// 一元运算
+		var k=0; 
+		var res = k++ + ++k +k +k++;
+		// var res = k+++++k+k+k++;
+				  // 0   +  2 + 2 + 2
+		// k:3
+		// res:6
+
+		var k=0;
+		var res = k++ + ++k +k + --k - k-- + k++;
+		// 		  0   + 2   +2 + 1	- 1    + 0
+		// k:1
+		// res:4
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品列表</title>
+	<style>
+		ul{list-style: none;margin:0;padding:0;}
+		.goodslist{width:1050px;margin:0 auto;}
+		.goodslist img{width:200px;}
+		.goodslist ul{overflow:hidden;}
+		.goodslist li{float:left;padding-right:30px;margin:15px;width:200px;height:360px;border-right:1px dashed #ddd;}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		jQuery(function($){
+			/*
+				发起ajax请求,获取后端接口数据
+					* xhr: XMLHttpRequest
+			 */
+			$.ajax({
+				// 接口地址
+				url:'http://localhost:1802/api/goodslist.php',
+
+				// 请求类型:默认get
+				// type:'get'
+
+				// dataType:设定返回数据的格式
+				dataType:'json',
+
+				success:function(data){
+					console.log(data)
+					// 根据数据生成html结构
+
+					var $ul = $('<ul/>');
+
+					var str = data.map(function(goods,idx){
+						return `<li data-id="${goods.id}">
+							<a href="goods.html?id=${goods.id}"><img src="img/${idx}.jpg"/></a>
+							<h4>${goods.name}</h4>
+							<p class="cate">分类:${goods.category}</p>
+							<p class="color">颜色:${goods.color}</p>
+							<p class="size">尺寸:${goods.size}</p>
+							<p class="price">价格: <span>${goods.price}</span></p>
+						</li>`
+					}).join('');
+
+					// 往ul中写入li字符串
+					$ul.html(str);
+
+
+					// 往.goodslist内写入$ul
+					$('.goodslist').append($ul);
+
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<h1>商品列表</h1>
+	<div class="goodslist">
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10闰年判断</title>
+	<style>
+		.pingnian{color:#f00;}
+	</style>
+</head>
+<body>
+	<h1>闰年判断</h1>
+	<input type="text" id="year">
+	<button id="btn">闰年判断</button>
+	<div id="output"></div>
+	<script>
+		/*
+			逻辑运算：
+				* 与	&&
+					true && true  => true
+					true && false => false
+					false && true => false
+					false && false => false
+				* 或	||
+					true || true => true
+					true || false => true
+					false || true => true
+					false || false => false
+				* 非（取反）	!	
+		 */
+		// 获取页面元素
+		// DOM树中的某一个节点：DOM节点
+		var year = document.getElementById('year');
+		var btn = document.getElementById('btn');
+		var output = document.getElementById('output');
+
+		// 绑定事件
+		btn.onclick = function(){
+			// 获取输入的年份
+			var _year = year.value*1;
+
+			if(_year%4===0 && _year%100!=0 || _year%400===0){
+				output.innerHTML = _year + '是<strong>闰年</strong>';
+			}else{
+				output.innerHTML = _year + '是<span class="pingnian">平年</span>'
+			}
+
+		}
+	</script>
+</body>
+</html>

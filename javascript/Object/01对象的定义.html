@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01对象的定义</title>
+	<script>
+		window.onload = function(){
+			/*
+				对象
+					* 定义
+						* 字面量
+						* 构造函数
+					* 格式: {属性名:属性值,属性名:属性值}
+					* 操作(属性名:[],点语法)
+						* 增	添加一个属性
+						* 删	删除一个属性
+						* 改	修改一个现有属性
+						* 查	读取属性名对应的属性值
+							* 读取不存在的属性得到:undefined
+						* 遍历
+			 */
+			
+			// 字面量
+			// 
+			var person = {
+				name:'laoxie',
+				age:18,
+				gender:'男',
+				hobby:['写代码','休闲会所','羽毛球']
+			}
+
+			// 添加属性
+			// person['nickname'] = '小谢';
+			person.nickname = '小谢';
+
+			// 删除属性
+			// delete
+			// delete person['hobby'];
+			delete person.hobby;
+
+
+			// 修改
+			person.age = 19;
+
+			// 读取属性值
+			console.log(person.name)
+
+
+			console.log(person);
+
+			// 读取所有属性
+			// 遍历对象全部属性:for...in
+			for(var key in person){
+				// 遍历过程分别把属性名赋值给key
+				// 1.var key=name;
+				// 2.var key=age
+				// 3.var key=gender
+				// 4.var key=nickname
+				// console.log(key);
+
+				// 获取key对应的属性值
+				console.log(key,person[key]);//person.key
+			}
+			
+		}
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

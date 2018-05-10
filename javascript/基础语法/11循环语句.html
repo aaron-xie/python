@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11循环语句</title>
+	<script>
+		/*
+			while
+			do..while
+			for
+				* for(初始化;条件;更新){}
+			for...in
+
+			//循环语句组成部分
+				* 变量初始化
+				* 条件判断
+				* 变量更新
+
+			* 使用while还是for循环
+				* 如果直到循环次数：for
+				* 不知道循环次数：while
+		 */
+		
+		// 变量初始化
+		var num = 1;
+
+		var total = 0;
+		console.log('start')
+		while(num<=100){
+			// 求奇数和
+			if(num%2 != 0){
+				total += num;
+			}
+
+			// 变量更新
+			// 往条件不成立的方向改变
+			num++;
+		}
+
+		// 循环完成后才执行这里的代码
+		console.log('end',num);
+
+
+		var num1 = 10;
+		while(num1>20){
+			console.log('while');
+			num1++;
+		}
+
+
+		var num2 = 10;
+		do{
+			// 不管条件是否成立都先执行一次这里的代码
+			console.log('do..while');
+			num2++;
+		}while(num2>20);
+
+
+
+		for(var num=1;num<=100;num++){
+			console.log('for')
+		}
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

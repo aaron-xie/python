@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02根据数据生成商品列表</title>
+	<style>
+		ul{list-style: none;padding:0;margin:0;}
+		.goodslist ul{overflow: hidden;}
+		.goodslist li{float:left;margin:10px;padding-right:20px;border-right:1px dashed #ddd;}
+		.goodslist img{width:200px;border:1px solid #ddd;}
+		.goodslist h4{margin-bottom:0;}
+		.goodslist h6{margin-top:5px;color:#666;}
+		.goodslist .price span{color:#f00;}
+		.goodslist .price span::before{
+			content: '￥'
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			/*
+				02根据数据生成商品列表
+					* 遍历数组
+					* 读取对象属性
+					* 生成DOM节点,并写入页面
+					*
+				
+				map(fn) : 返回一个数量相等的数组，内容是什么取决于在fn中返回的值
+			 */
+			
+			var data = [{
+		        id:'001',
+		        name:'iphone7 plugs',
+		        nickname:'肾7',
+		        imgurl:'img/ip7.jpg',
+		        price:5899.00,
+		        sale:5888.00,
+		        color:'土豪金'
+		    },{
+		        id:'002',
+		        name:'Note7',
+		        nickname:'爆炸7',
+		        imgurl:'img/note7.jpg',
+		        price:3899.00,
+		        sale:998.00,
+		        color:'黑色'
+		    },{
+		        id:'003',
+		        name:'荣耀7',
+		        nickname:'爱国7',
+		        imgurl:'img/honor7.jpg',
+		        price:1999.00,
+		        sale:1899.00,
+		        color:'白色'
+		    },{
+		        id:'001',
+		        name:'iphone7 plugs',
+		        nickname:'肾7',
+		        imgurl:'img/ip7.jpg',
+		        price:5899.00,
+		        sale:5888.00,
+		        color:'土豪金'
+		    },{
+		        id:'002',
+		        name:'Note7',
+		        nickname:'爆炸7',
+		        imgurl:'img/note7.jpg',
+		        price:3899.00,
+		        sale:998.00,
+		        color:'黑色'
+		    },{
+		        id:'003',
+		        name:'荣耀7',
+		        nickname:'爱国7',
+		        imgurl:'img/honor7.jpg',
+		        price:1999.00,
+		        sale:1899.00,
+		        color:'白色'
+		    },{
+		        id:'001',
+		        name:'iphone7 plugs',
+		        nickname:'肾7',
+		        imgurl:'img/ip7.jpg',
+		        price:5899.00,
+		        sale:5888.00,
+		        color:'土豪金'
+		    },{
+		        id:'002',
+		        name:'Note7',
+		        nickname:'爆炸7',
+		        imgurl:'img/note7.jpg',
+		        price:3899.00,
+		        sale:998.00,
+		        color:'黑色'
+		    },{
+		        id:'003',
+		        name:'荣耀7',
+		        nickname:'爱国7',
+		        imgurl:'img/honor7.jpg',
+		        price:1999.00,
+		        sale:1899.00,
+		        color:'白色'
+		    },{
+		        id:'001',
+		        name:'iphone7 plugs',
+		        nickname:'肾7',
+		        imgurl:'img/ip7.jpg',
+		        price:5899.00,
+		        sale:5888.00,
+		        color:'土豪金'
+		    },{
+		        id:'002',
+		        name:'Note7',
+		        nickname:'爆炸7',
+		        imgurl:'img/note7.jpg',
+		        price:3899.00,
+		        sale:998.00,
+		        color:'黑色'
+		    },{
+		        id:'003',
+		        name:'荣耀7',
+		        nickname:'爱国7',
+		        imgurl:'img/honor7.jpg',
+		        price:1999.00,
+		        sale:1899.00,
+		        color:'白色'
+		    },{
+		        id:'001',
+		        name:'iphone7 plugs',
+		        nickname:'肾7',
+		        imgurl:'img/ip7.jpg',
+		        price:5899.00,
+		        sale:5888.00,
+		        color:'土豪金'
+		    },{
+		        id:'002',
+		        name:'Note7',
+		        nickname:'爆炸7',
+		        imgurl:'img/note7.jpg',
+		        price:3899.00,
+		        sale:998.00,
+		        color:'黑色'
+		    },{
+		        id:'003',
+		        name:'荣耀7',
+		        nickname:'爱国7',
+		        imgurl:'img/honor7.jpg',
+		        price:1999.00,
+		        sale:1899.00,
+		        color:'白色'
+		    }];
+
+		    /*
+		    	id
+		    	title
+		    	class
+
+		    	data-* : 符合W3C标准的自定义属性
+		     */
+
+		     var goodslist = document.querySelector('.goodslist');
+
+		    // 创建ul
+		    var ul = document.createElement('ul');
+
+		    // 遍历方法
+			var html = data.map(function(goods,idx,arr){
+				// item:数组元素
+				// idx :对应索引值
+				// arr :goodslist引用
+				return '<li data-guid="'+ goods.id +'">' + 
+						'<img src="'+ goods.imgurl +'">' + 
+						'<h4>'+goods.name+'</h4>' +
+						'<h6>'+goods.nickname+'</h6>' +
+						'<p>原价: <del>'+goods.price+'</del></p>' +
+						'<p class="price">现价: <span>'+goods.sale+'</span></p>' +
+						'<p class="color">颜色: <span>'+goods.color+'</span></p>' +
+				'</li>'
+			}).join('\n');
+
+			ul.innerHTML = html;
+
+			console.log(html);
+
+
+			// 把ul写入页面已存在的元素内
+			goodslist.appendChild(ul);
+
+
+			// 了解map用法
+			// var arr = [10,20,30];
+			// var res = arr.map(function(item,idx){
+			// 	return item*idx + 100
+			// });
+			// console.log(res);
+		}
+
+
+
+	</script>
+</head>
+<body>
+	<h1>02根据数据生成商品列表</h1>
+	<div class="goodslist">
+		
+	</div>
+</body>
+</html>

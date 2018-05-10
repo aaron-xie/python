@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03css选择器</title>
+	<style>
+		/*
+			浏览器默认样式
+				* 字体大小：16px
+			
+			设置css样式：
+				* 编写css的格式：选择器{属性:属性值;}
+
+			选择器：选中所需元素
+				* 类选择器：.box
+				* id选择器：#box
+				* 标签选择器：div
+
+				* 伪类选择器：需要添加一个类才能达到一样的效果：称为伪类选择器
+					* :hover
+				* 伪元素选择器：需要添加一个元素才能达到一样的效果
+					* ::after;
+					* ::before;
+						* content
+		 */
+		
+		a{color:#333;text-decoration:none;}
+		a:hover{color:#f00;text-decoration:underline;}
+		/*.hv{color:#f00;text-decoration:underline;}*/
+
+		.price span{color:#f00;}
+		.price span::before{
+			content:'￥';
+			color:#58bc58;
+			font-size:10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="#" id="hv">CSS选择器</a>
+	</div>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+	<p class="price">价格：<span>998</span></p>
+</body>
+</html>

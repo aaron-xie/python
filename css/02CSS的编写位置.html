@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02CSS的编写位置</title>
+	<!-- 内部样式 -->
+	<style>
+		/*
+			02CSS的编写位置
+				* style标签：内部样式
+				* style属性：内联样式
+				* link标签： 外链样式
+					* href: css文件地址; 
+					* rel: 指定href属性为样式表;
+
+
+				* css属性：
+					* 边距
+						* 外边距 margin
+						* 内边距 padding
+		 */
+		
+		body{background-color:#999;}
+		.box{padding:20px;background-color:#f60;width:600px;}
+		h1{background-color:#58cb58;width:300px;}
+	</style>
+
+	<!-- 外部样式（外链） -->
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<input type="text" id="username" value="laoxie"><!-- border:#f60,height:80px,color:#00f-->
+	<input type="text" class="password"><!--border:#58cb58,height:30-->
+
+	<div class="box" style="border:10px dashed #fc0;background-color:#fff;">
+
+		<h1>html位置</h1>
+		<p style="background-color: #fc0">#fc0</p>   
+		<span></span> <span></span>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04表单的组成部分</title>
+	<style>
+		/*
+			选择器：选中某个元素
+				* 类class：.xx{}
+				* id     ：#xx{}
+				* 标签   : select{}
+
+			css属性：
+				* text-align 水平对齐
+					* left
+					* center
+					* right
+				* vertical-align
+					* top
+					* center
+					* bottom
+				* width：对行内元素无效
+				* 行内元素与块元素的转换：dispaly
+					* inline 	行内（内联）元素
+					* block     块元素
+					* inline-block   可设置宽高的内联元素
+		 */
+		
+		#msg{width:300px;height:60px;}
+		label{display:inline-block;width:80px;color:#f00;text-align:right;}
+		.msg label{vertical-align:top;};
+	</style>
+</head>
+<body>
+	<h1>04表单的组成部分</h1>
+	<!-- 
+		form表单
+			* 表单元素
+				* input  单行
+					* type类型
+						* text
+						* password
+				* button
+				* select
+					* option：下拉选项
+						* 默认显示第一个
+						* selected 设置默认选项
+				* textarea  多行
+				* label
+					* for
+			* 属性
+				* name
+				* type
+			
+	 -->
+	 <form action="http://xxx.com/data.py">
+	 	<div>
+	 	用户名：
+	 	<input type="text" name="username">
+		</div>
+		<div>
+	 	密码：
+	 	<input type="password" name="psw">
+	 	</div>
+	 	<button>登录</button>
+	 </form>
+
+
+	 <form action="">
+	 	<!-- for属性为表单元素id名 -->
+	 	<div>
+		 	<label for="username">用户名：</label>
+		 	<input type="text" name="username" id="username">
+	 	</div>
+	 	<div>
+		 	<label for="password">用户名：</label>
+		 	<input type="password" name="password" id="password">
+	 	</div>
+	 	<div>
+		 	<label for="gender">性别：</label>
+			<select name="gender" id="gender">
+				<option value="">男</option>
+				<option value="">女</option>
+				<option value="" selected>不详</option>
+			</select>
+		</div>
+		<div class="msg">
+			<label for="msg">建议：</label>
+			<textarea name="msg" id="msg"></textarea>
+		</div>
+	 </form>
+</body>
+</html>

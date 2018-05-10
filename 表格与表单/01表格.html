@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格table</title>
+		<style>
+			/*
+				此处用于css样式编写
+					* 选择器：选中一个标签
+						* 类选择器
+							* 格式：.类{}
+						* 后代选择器：空格
+							* 格式 .student td{}
+					* css样式格式：.类{css属性:值;}
+					* 常用css属性
+						* border
+						* width/height
+					* 单位
+						* px
+			 */
+			
+			.student{
+				/*		宽度 类型 颜色*/
+				border:5px solid #FFD306;width:500px;
+			}
+
+			/*给单元格td设置边框*/
+			.student td{
+				border:1px solid #58bc58;
+			}
+			.student th{
+				border:1px solid #58bc58;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<!-- 
+			表格table
+				* thead
+				* tbody
+					* tr 表格行
+						* td：单元格，用于存放数据
+						* th：表头单元格
+
+
+				* 属性
+					* border
+		 -->
+
+		<h1>学员信息</h1>
+		 <table class="student">
+		 	<thead>
+		 		<tr><!-- 表格行 -->
+		 			<th>编号</th> <!-- 单元格 -->
+		 			<th>姓名</th>
+		 			<th>年龄</th>
+		 			<th>是否单身</th>
+		 		</tr>
+		 	</thead>
+			<tbody>
+				<tr>
+					<td>001</td>
+					<td rowspan="3">laoxie</td>
+					<td colspan="2">18</td>
+					<!-- <td>单身</td> -->
+				</tr>
+				<tr>
+					<td>002</td>
+					<!-- <td>jiaojiao</td> -->
+					<td>20</td>
+					<td>单身</td>
+				</tr>
+				<tr>
+					<td>003</td>
+					<!-- <td>tiantian</td> -->
+					<td>19</td>
+					<td>单身</td>
+				</tr>
+			</tbody>
+		 </table>
+	</body>
+</html>

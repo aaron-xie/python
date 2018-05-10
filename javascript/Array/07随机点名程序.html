@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+		/*
+			* map()
+			* join()
+			* call()
+
+			* IE9+
+				* querySelector() 获取第一个匹配的元素
+				* querySelectorAll() 获取所有匹配元素
+		 */
+		var namelist = ["李锷锋","付豪","段锦程","曹钦","王伟","唐雄飞","余本光","陆梓伟","潘志华","梁栋昌","张杰","张志东","李梓林","黄龙","林良斌","周宁","范新","黄冬明","林德双","倪展昭","史轶凡","吴雪娇","符智键","何锦波","陈家驹","谢观发","廖鑫","李光胜","张梓滨","李宗儒","冯志涛","黄仕任","符传光","杨俊","段乐荣","吴季硕","韦仁华","鲁志豪","张羽双","刘炜秋","周清","程武明","熊鹏","罗程","杨文武","何宁秋","林祥池","刘文敏","谭楚茜","黄宇翔","郭承尊","徐惠宇","李坤","熊友彬","卢俊"];
+
+			// var btn = document.getElementById('btn');
+			var btn = document.querySelector('#btn');
+			var output = document.querySelector('.output');
+
+			btn.onclick = function(){
+				var idx = parseInt(Math.random()*namelist.length);
+				output.innerHTML = namelist[idx];
+			}
+			
+		}
+
+
+
+	</script>
+</head>
+<body>
+	<button id="btn">随机点名</button>
+	<div class="output"></div>
+</body>
+</html>

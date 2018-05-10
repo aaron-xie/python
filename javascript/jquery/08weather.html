@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>天气</title>
+	<style>
+		ul{list-style: none;margin:0;padding:0;}
+		.weather{width:1050px;margin:0 auto;}
+		.weather img{width:200px;}
+		.weather ul{overflow:hidden;}
+		.weather li{float:left;padding-right:30px;margin:15px;width:140px;height:360px;border-right:1px dashed #ddd;}
+	</style>
+	<script src="lib/jquery-3.2.1.js"></script>
+	<script>
+		jQuery(function($){
+			/*
+				利用CORS加载天气
+					* 接口地址：http://wthrcdn.etouch.cn/weather_mini?city=广州
+					* 接口描述：通过城市名字获得天气数据，json数据
+			 */
+			
+			var $weather = $('.weather');
+			
+			getWeather('广州');
+
+			// 失去焦点时触发事件处理函数
+			var $city = $('#city');
+			$('#city').on('blur',function(){
+				// 获取输入的城市
+				var _city = $city.val();
+
+				getWeather(_city);
+			})
+
+			// 二次封装
+			function getWeather(_city){
+				$.ajax({
+					url:'http://wthrcdn.etouch.cn/weather_mini',
+					// 设置请求参数
+					data:{
+						city:_city
+					},
+					dataType:'json',
+					success:function(res){
+						var data = res.data;
+						console.log(data)
+
+						// 根据数据声明html结构
+						var $h2 = $('<h2/>').html(data.city + '的天气概况');
+						// $weather.append($h2);
+						$h2.appendTo($weather);
+
+						$('<p/>').addClass('tips').html(data.ganmao).appendTo($weather);
+
+						var str = data.forecast.map(function(item){
+							return `<li>
+								<h4>${item.date}</h4>
+								<div class="wendu">${item.low}/${item.high}</div>
+								<div class="type">${item.type}</div>
+							</li>`
+						}).join('');
+
+						$('<ul/>').html(str).appendTo($weather);
+					}
+				});
+			}
+
+		});
+	</script>
+</head>
+<body>
+	<h1>天气预报</h1>
+	<input type="text" id="city">
+	<div class="weather">
+		
+	</div>
+</body>
+</html>

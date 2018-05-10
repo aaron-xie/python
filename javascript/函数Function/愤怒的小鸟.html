@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06愤怒的小鸟</title>
+	<style>
+		html,body{height:100%;overflow:hidden;}
+		#ab{position:absolute;top:0;left:0;width:200px;}
+		.right{transform:rotateY(180deg);}
+		.down{transform:rotateZ(-50deg);}
+		.up{transform:rotateZ(50deg);}
+	</style>
+	<script>
+		window.onload = function(){
+			var bird = document.getElementById('ab');
+
+			// 小鸟定位到光标中间位置
+			// document.onmousemove = function(e){
+			// 	bird.style.left = e.clientX - bird.offsetWidth/2 + 'px';
+			// 	bird.style.top = e.clientY - bird.offsetHeight/2 + 'px';
+			// }
+
+			var speed = 10;
+
+			// 键盘方向键移动小鸟
+			document.onkeydown = function(e){
+				console.log(e.keyCode,e.which);
+
+				var key = e.keyCode;
+
+				// 获取小鸟当前所在的位置
+				var left = bird.offsetLeft;
+				var top = bird.offsetTop;
+
+				if(key === 37){
+					left -= speed;
+					bird.className = '';
+				}else if(key === 39){
+					left += speed;
+
+					// 改变方向
+					bird.className = 'right';
+				}else if(key === 38){
+					top -= speed;
+					bird.className = 'up';
+				}else if(key === 40){
+					top += speed;
+					bird.className = 'down';
+				}
+
+				// 边界处理(水平+垂直)
+				if(left < -bird.offsetWidth){
+					left = window.innerWidth;
+				}else if(left > window.innerWidth){
+					left = -bird.offsetWidth
+				}
+
+				if(top < -bird.offsetHeight){
+					top = window.innerHeight;
+				}else if(top > window.innerHeight){
+					top = -bird.offsetHeight;
+				}
+
+
+				bird.style.left = left + 'px';
+				bird.style.top = top + 'px';
+			}
+		}
+	</script>
+</head>
+<body>
+	<img src="img/bird.jpg" id="ab"/>
+</body>
+</html>
